@@ -1,4 +1,4 @@
-package com.example.smarthomeapp;
+package com.example.smarthomeapp.ui.tables;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,22 +9,23 @@ import android.webkit.WebView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.smarthomeapp.databinding.WeathstatDbTableFragmentBinding;
+import com.example.smarthomeapp.R;
+import com.example.smarthomeapp.databinding.GasboilerTableBinding;
 
-public class WeathStatTableFragment extends Fragment {
-    private WeathstatDbTableFragmentBinding binding;
+public class GasBoilerTableFragment extends Fragment {
+    private GasboilerTableBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        binding = WeathstatDbTableFragmentBinding.inflate(inflater, container, false);
+        binding = GasboilerTableBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        WebView browser=root.findViewById(R.id.WeathstatDB_Table);
+        WebView browser=root.findViewById(R.id.Gasboiler_Table);
         browser.setInitialScale(100);
         browser.getSettings().setBuiltInZoomControls(true);
         browser.getSettings().setDisplayZoomControls(false);
-        browser.loadUrl("http://alexgorlov99.ru/smarthomeproject/weatherstation-data.php");
+        browser.loadUrl("http://alexgorlov99.ru/smarthomeproject/gasboiler-data.php");
 
         return root;
     }

@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="serif"
         android:paddingTop="2dp"
-        android:text="Smart Home Ivnya v.1.0"
+        android:text="Smart Home Project v.2.0"
         android:textAlignment="viewStart"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textStyle="bold" />

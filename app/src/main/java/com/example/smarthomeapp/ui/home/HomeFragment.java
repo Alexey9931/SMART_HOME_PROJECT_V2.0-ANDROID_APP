@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.smarthomeapp.BackgroundWorker;
+import com.example.smarthomeapp.ControlPanelValuesGetter;
 import com.example.smarthomeapp.R;
 import com.example.smarthomeapp.databinding.FragmentHomeBinding;
 
@@ -58,11 +58,12 @@ public class HomeFragment extends Fragment {
         time_error = root.findViewById(R.id.time_error);
         time_error.setVisibility(View.INVISIBLE);
 
-        BackgroundWorker backgroundWorker = new BackgroundWorker(getContext());
-        backgroundWorker.execute(   "http://alexgorlov99.ru/smarthomeproject/validateData-1day.php",
-                                    "http://alexgorlov99.ru/smarthomeproject/validateData-3days.php",
-                                    "http://alexgorlov99.ru/smarthomeproject/validateData-5days.php",
-                                    "http://alexgorlov99.ru/smarthomeproject/validateData-7days.php","login");
+        ControlPanelValuesGetter controlPanelValuesGetter = new ControlPanelValuesGetter(getContext());
+        controlPanelValuesGetter.execute(
+                "http://alexgorlov99.ru/smarthomeproject2.0/get-controlpanel-1day.php",
+                "http://alexgorlov99.ru/smarthomeproject2.0/get-controlpanel-3day.php",
+                "http://alexgorlov99.ru/smarthomeproject2.0/get-controlpanel-5day.php",
+                "http://alexgorlov99.ru/smarthomeproject2.0/get-controlpanel-7day.php");
 
 
         //firebase.get_firebase(getContext(), STREET_TEMP, STREET_HUM, RAIN, VBat, WIND_SPEED, WIND_DIRECTION, HOME_TEMP, HOME_HUM, PRESSURE, TIME, imagewind, weath_forecast);

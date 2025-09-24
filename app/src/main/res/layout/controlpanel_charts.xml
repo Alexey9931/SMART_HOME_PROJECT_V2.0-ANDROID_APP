@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="720dp"
+    android:tag=".ui.charts.ControlPanelCharts">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp">
+
+        <TableLayout
+            android:id="@+id/table"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="0dp">
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/temp_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="0dp"
+            android:text="График изменения температуры в помещении с течением времени"
+            android:textAlignment="center"
+            android:textColor="@color/purple_700"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/hum_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="0dp"
+            android:text="График изменения влажности в помещении с течением времени"
+            android:textAlignment="center"
+            android:textColor="@color/purple_700"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/pressure_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="0dp"
+            android:text="График изменения атмосферного давления с течением времени"
+            android:textAlignment="center"
+            android:textColor="@color/purple_700"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/controlpanel_chart_error_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="140dp"
+            android:text="Данные не выбраны!\n Проверьте настройки графиков!\n(Вкладка Chart's settings) "
+            android:textAlignment="center"
+            android:textColor="@color/purple_700"
+            android:textSize="20dp" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/controlpanel_temp_chart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            tools:ignore="MissingConstraints" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/controlpanel_hum_chart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            tools:ignore="MissingConstraints" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/pressure_chart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:foregroundTint="#763FF1"
+            tools:ignore="MissingConstraints" />
+    </RelativeLayout>
+
+
+</ScrollView>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:tag=".ui.charts.ControlPanelChartsSettings">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/setting"
+    tools:context=".ui.chart_settings.ControlPanelChartsSettingsFragment">
+
+        <TextView
+            android:id="@+id/ControlPanelChartsSettings_textView1"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="170dp"
+            android:text="Выберите параметры для отображения на графиках"
+            android:textAlignment="center"
+            android:textColor="@color/purple_700"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ControlPanelChartsSettings_textView2"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:text="Выберите временной диапазон на графиках"
+            android:textAlignment="center"
+            android:textColor="@color/purple_700"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+
+        <View
+            android:id="@+id/ControlPanelChartsSettings_divider"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="290dp"
+            android:background="?android:attr/listDivider"
+            android:backgroundTint="@color/purple_700"
+            android:backgroundTintMode="add"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+
+        <CheckBox
+            android:id="@+id/ControlPanelChartsSettings_checkBox_view_mode1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="235dp"
+            android:buttonTint="@color/purple_700"
+            android:checked="false"
+            android:textAlignment="textStart"
+            android:textColor="@color/purple_700"
+            android:textIsSelectable="false"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/ControlPanelChartsSettings_textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="370dp"
+            android:text="RH [%] воздуха в помещении"
+            android:textColor="@color/purple_700"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/ControlPanelChartsSettings_textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="245dp"
+            android:text="Отобразить все параметры"
+            android:textColor="@color/purple_700"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/ControlPanelChartsSettings_textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="310dp"
+            android:text="T [°C] воздуха в помещении"
+            android:textColor="@color/purple_700"
+            android:textSize="20dp" />
+
+        <CheckBox
+            android:id="@+id/ControlPanelChartsSettings_checkBox_TEMP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="300dp"
+            android:buttonTint="@color/purple_700"
+            android:checked="false"
+            android:textColor="@color/purple_700"
+            android:textSize="16dp" />
+
+        <CheckBox
+            android:id="@+id/ControlPanelChartsSettings_checkBox_HUM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="360dp"
+            android:buttonTint="@color/purple_700"
+            android:checked="false"
+            android:textColor="@color/purple_700"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/ControlPanelChartsSettings_textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="430dp"
+            android:text="Атм.давление[мм.рт.ст]"
+            android:textColor="@color/purple_700"
+            android:textSize="20dp" />
+
+        <CheckBox
+            android:id="@+id/ControlPanelChartsSettings_checkBox_PRESSURE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="420dp"
+            android:buttonTint="@color/purple_700"
+            android:textColor="@color/purple_700"
+            android:textSize="16dp" />
+
+        <RadioGroup
+            android:id="@+id/ControlPanelChartsSettings_display_mode"
+            android:layout_width="401dp"
+            android:layout_height="291dp">
+
+            <RadioButton
+                android:id="@+id/ControlPanelChartsSettings_radioButton_1day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="95dp"
+                android:buttonTint="@color/purple_700"
+                android:checked="true"
+                android:text="1 День"
+                android:textColor="@color/purple_700"
+                android:textColorHighlight="@color/purple_700"
+                android:textColorHint="@color/purple_700"
+                android:textColorLink="@color/purple_700"
+                android:textSize="16dp" />
+
+            <RadioButton
+                android:id="@+id/ControlPanelChartsSettings_radioButton_3day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="105dp"
+                android:layout_marginTop="-48dp"
+                android:buttonTint="@color/purple_700"
+                android:text="3 Дня"
+                android:textColor="@color/purple_700"
+                android:textColorHighlight="@color/purple_700"
+                android:textColorHint="@color/purple_700"
+                android:textColorLink="@color/purple_700"
+                android:textSize="16dp" />
+
+            <RadioButton
+                android:id="@+id/ControlPanelChartsSettings_radioButton_5day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="205dp"
+                android:layout_marginTop="-48dp"
+                android:buttonTint="@color/purple_700"
+                android:text="5 Дней"
+                android:textColor="@color/purple_700"
+                android:textColorHighlight="@color/purple_700"
+                android:textColorHint="@color/purple_700"
+                android:textColorLink="@color/purple_700"
+                android:textSize="16dp" />
+
+            <RadioButton
+                android:id="@+id/ControlPanelChartsSettings_radioButton_7day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="305dp"
+                android:layout_marginTop="-48dp"
+                android:buttonTint="@color/purple_700"
+                android:text="7 Дней"
+                android:textColor="@color/purple_700"
+                android:textColorHighlight="@color/purple_700"
+                android:textColorHint="@color/purple_700"
+                android:textColorLink="@color/purple_700"
+                android:textSize="16dp" />
+        </RadioGroup>
+
+
+</RelativeLayout>
+</ScrollView>

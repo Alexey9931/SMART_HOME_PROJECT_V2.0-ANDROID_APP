@@ -23,17 +23,17 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CreateCharts {
-    public void Fill_Street_Temp_Chart(LineChart chart)
+public class WeatherStationChartsCreator {
+    public void Fill_Temp_Chart(LineChart chart)
     {
         ArrayList<Entry> entries = new ArrayList<>();
-        for (int i = 0; i < BackgroundWorker.LIST1.size();i++)
+        for (int i = 0; i < WeatherStationValuesGetter.TemperatureList.size(); i++)
         {
-            entries.add(new Entry(i, Float.parseFloat(BackgroundWorker.LIST1.get(i))));
+            entries.add(new Entry(i, Float.parseFloat(WeatherStationValuesGetter.TemperatureList.get(i))));
         }
 
         // На основании массива точек создадим первую линию с названием
-        LineDataSet dataset = new LineDataSet(entries, "Уличная температура, °C");
+        LineDataSet dataset = new LineDataSet(entries, "Температура на улице, °C");
         dataset.setDrawFilled(true);
         dataset.setFillColor(Color.RED);
         dataset.setColor(Color.RED);
@@ -57,7 +57,7 @@ public class CreateCharts {
         yAxis.setTextSize(12f);
 
         XAxis xAxis = chart.getXAxis();
-        xAxis.setValueFormatter(new IndexAxisValueFormatter(BackgroundWorker.LIST11));
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(WeatherStationValuesGetter.TimestampList));
         xAxis.setGranularityEnabled(true);
         xAxis.setLabelCount(3, false);
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
@@ -66,16 +66,16 @@ public class CreateCharts {
         // Не забудем отправить команду на перерисовку кадра, иначе график не отобразится
         chart.invalidate();
     }
-    public void Fill_Street_HUM_Chart(LineChart chart)
+    public void Fill_Hum_Chart(LineChart chart)
     {
         ArrayList<Entry> entries = new ArrayList<>();
-        for (int i = 0; i < BackgroundWorker.LIST2.size();i++)
+        for (int i = 0; i < WeatherStationValuesGetter.HumidityList.size(); i++)
         {
-            entries.add(new Entry(i, Float.parseFloat(BackgroundWorker.LIST2.get(i))));
+            entries.add(new Entry(i, Float.parseFloat(WeatherStationValuesGetter.HumidityList.get(i))));
         }
 
         // На основании массива точек создадим первую линию с названием
-        LineDataSet dataset = new LineDataSet(entries, "Уличная влажность, %");
+        LineDataSet dataset = new LineDataSet(entries, "Влажность на улице, %");
         dataset.setDrawFilled(true);
         dataset.setColor(Color.BLUE);
         dataset.setFillColor(Color.BLUE);
@@ -99,7 +99,7 @@ public class CreateCharts {
         yAxis.setTextSize(12f);
 
         XAxis xAxis = chart.getXAxis();
-        xAxis.setValueFormatter(new IndexAxisValueFormatter(BackgroundWorker.LIST11));
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(WeatherStationValuesGetter.TimestampList));
         xAxis.setGranularityEnabled(true);
         xAxis.setLabelCount(3, false);
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
@@ -111,10 +111,10 @@ public class CreateCharts {
     public void Fill_Rain_Chart(LineChart chart)
     {
         ArrayList<Entry> entries = new ArrayList<>();
-        for (int i = 0; i < BackgroundWorker.LIST3.size();i++)
+        for (int i = 0; i < WeatherStationValuesGetter.RainFallList.size(); i++)
         {
             //entries.add(new Entry(i, 100 - 100 * Float.parseFloat(Firebase.LIST3.get(i))));
-            entries.add(new Entry(i, Float.parseFloat(BackgroundWorker.LIST3.get(i))));
+            entries.add(new Entry(i, Float.parseFloat(WeatherStationValuesGetter.RainFallList.get(i))));
         }
 
         // На основании массива точек создадим первую линию с названием
@@ -142,7 +142,7 @@ public class CreateCharts {
         yAxis.setTextSize(12f);
 
         XAxis xAxis = chart.getXAxis();
-        xAxis.setValueFormatter(new IndexAxisValueFormatter(BackgroundWorker.LIST11));
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(WeatherStationValuesGetter.TimestampList));
         xAxis.setGranularityEnabled(true);
         xAxis.setLabelCount(3, false);
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
@@ -151,157 +151,65 @@ public class CreateCharts {
         // Не забудем отправить команду на перерисовку кадра, иначе график не отобразится
         chart.invalidate();
     }
-    public void Fill_VBAT_Chart(LineChart chart)
+    public void Fill_Wind_Direct_Table(TableLayout wind_direct_table, Context context)
     {
-        ArrayList<Entry> entries = new ArrayList<>();
-        for (int i = 0; i < BackgroundWorker.LIST4.size();i++)
-        {
-            entries.add(new Entry(i, Float.parseFloat(BackgroundWorker.LIST4.get(i))));
-        }
-
-        // На основании массива точек создадим первую линию с названием
-        LineDataSet dataset = new LineDataSet(entries, "Заряд аккумулятора, В");
-        dataset.setDrawFilled(true);
-        dataset.setColor(Color.CYAN);
-        dataset.setFillColor(Color.CYAN);
-        dataset.setCircleColor(Color.CYAN);
-        // Создадим переменную данных для графика
-        LineData data = new LineData(dataset);
-        // Передадим данные для графика в сам график
-        chart.setData(data);
-        chart.animateX(500);
-        chart.setDrawBorders(true);
-        chart.setDrawMarkers(true);
-        chart.getDescription().setEnabled(false);
-
-        //chart.setVisibleXRangeMaximum(4);
-        //chart.setScaleXEnabled(false);
-
-        YAxis yAxisRight = chart.getAxisRight();
-        yAxisRight.setTextColor(Color.WHITE);
-
-        YAxis yAxis = chart.getAxisLeft();
-        yAxis.setTextSize(12f);
-
-        XAxis xAxis = chart.getXAxis();
-        xAxis.setValueFormatter(new IndexAxisValueFormatter(BackgroundWorker.LIST11));
-        xAxis.setGranularityEnabled(true);
-        xAxis.setLabelCount(3, false);
-        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        xAxis.setDrawGridLines(true);
-        xAxis.setTextSize(12f);
-        // Не забудем отправить команду на перерисовку кадра, иначе график не отобразится
-        chart.invalidate();
-    }
-    public void Fill_Wind_Direct_Table(TableLayout wind_direct_table, Context context) {
-        //int ROWS = 3;
-        int COLS = 4;
-
-        //for (int i = 0; i < (Firebase.LIST10.size()/4) + 1; i++)
-        int i = 0;
-        int k = 0;
-        while(k < (BackgroundWorker.LIST11.size()/4) + 1)
-        {
-            //строка с временем
-            TableRow tableRow = new TableRow(context);
-            tableRow.setBackgroundColor(Color.parseColor("#0079D6"));
-            tableRow.setLayoutParams(new TableLayout.LayoutParams(
-                    TableLayout.LayoutParams.MATCH_PARENT,
-                    TableLayout.LayoutParams.WRAP_CONTENT));
-            for (int j = 0; j < COLS; j++)
-            {
-                TextView textView1 = new TextView(context);
-                textView1.setTextColor(Color.BLACK);
-                textView1.setGravity(Gravity.CENTER);
-                if ((j + COLS*k) < BackgroundWorker.LIST11.size())
-                {
-                    textView1.setText(BackgroundWorker.LIST11.get(j + COLS*k));
-                }
-                tableRow.addView(textView1, new TableRow.LayoutParams(
-                        TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 0.5f));
-            }
-            wind_direct_table.addView(tableRow, i);
-            i++;
-            //строка с данными
-            TableRow tableRow1 = new TableRow(context);
-            tableRow1.setBackgroundColor(Color.parseColor("#DAE8FC"));
-            tableRow1.setLayoutParams(new TableLayout.LayoutParams(
-                    TableLayout.LayoutParams.MATCH_PARENT,
-                    TableLayout.LayoutParams.WRAP_CONTENT));
-            for (int j = 0; j < COLS; j++) {
-                TextView textView2 = new TextView(context);
-                textView2.setTextColor(Color.BLACK);
-                textView2.setGravity(Gravity.CENTER);
-                if ((j + COLS*k) < BackgroundWorker.LIST5.size())
-                {
-                    textView2.setText(BackgroundWorker.LIST5.get(j + COLS*k));
-                }
-                tableRow1.addView(textView2, new TableRow.LayoutParams(
-                        TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 0.5f));
-            }
-            wind_direct_table.addView(tableRow1, i);
-            k++;
-            i++;
-        }
-    }
-    public void Fill_Wind_Direct_Table_New(TableLayout wind_direct_table, Context context) {
         int total_amount = 6;//кол-во интервалов
         int num = 0;
         int ind = 0;
         List<String> PART1 = new ArrayList<>();
         List<String> data = new ArrayList<>();
-        while(num < (BackgroundWorker.LIST11.size()/total_amount))
+        while(num < (WeatherStationValuesGetter.TimestampList.size()/total_amount))
         {
-            PART1.add(ind,BackgroundWorker.LIST5.get(num));
+            PART1.add(ind, WeatherStationValuesGetter.WindDirectList.get(num));
             num++;
             ind++;
         }
-        data.add(0,BackgroundWorker.LIST11.get(0)+" - "+BackgroundWorker.LIST11.get(BackgroundWorker.LIST11.size()/total_amount));
+        data.add(0, WeatherStationValuesGetter.TimestampList.get(0)+" - "+ WeatherStationValuesGetter.TimestampList.get(WeatherStationValuesGetter.TimestampList.size()/total_amount));
         ind = 0;
         List<String> PART2 = new ArrayList<>();
-        while(num < (2*BackgroundWorker.LIST11.size()/total_amount))
+        while(num < (2* WeatherStationValuesGetter.TimestampList.size()/total_amount))
         {
-            PART2.add(ind,BackgroundWorker.LIST5.get(num));
+            PART2.add(ind, WeatherStationValuesGetter.WindDirectList.get(num));
             num++;
             ind++;
         }
-        data.add(1,BackgroundWorker.LIST11.get(1+BackgroundWorker.LIST11.size()/total_amount)+" - "+BackgroundWorker.LIST11.get(1+2*BackgroundWorker.LIST11.size()/total_amount));
+        data.add(1, WeatherStationValuesGetter.TimestampList.get(1+ WeatherStationValuesGetter.TimestampList.size()/total_amount)+" - "+ WeatherStationValuesGetter.TimestampList.get(1+2* WeatherStationValuesGetter.TimestampList.size()/total_amount));
         ind = 0;
         List<String> PART3 = new ArrayList<>();
-        while(num < (3*BackgroundWorker.LIST11.size()/total_amount))
+        while(num < (3* WeatherStationValuesGetter.TimestampList.size()/total_amount))
         {
-            PART3.add(ind,BackgroundWorker.LIST5.get(num));
+            PART3.add(ind, WeatherStationValuesGetter.WindDirectList.get(num));
             num++;
             ind++;
         }
-        data.add(2,BackgroundWorker.LIST11.get(1+2*BackgroundWorker.LIST11.size()/total_amount)+" - "+BackgroundWorker.LIST11.get(1+3*BackgroundWorker.LIST11.size()/total_amount));
+        data.add(2, WeatherStationValuesGetter.TimestampList.get(1+2* WeatherStationValuesGetter.TimestampList.size()/total_amount)+" - "+ WeatherStationValuesGetter.TimestampList.get(1+3* WeatherStationValuesGetter.TimestampList.size()/total_amount));
         ind = 0;
         List<String> PART4 = new ArrayList<>();
-        while(num < (4*BackgroundWorker.LIST11.size()/total_amount))
+        while(num < (4* WeatherStationValuesGetter.TimestampList.size()/total_amount))
         {
-            PART4.add(ind,BackgroundWorker.LIST5.get(num));
+            PART4.add(ind, WeatherStationValuesGetter.WindDirectList.get(num));
             num++;
             ind++;
         }
-        data.add(3,BackgroundWorker.LIST11.get(1+3*BackgroundWorker.LIST11.size()/total_amount)+" - "+BackgroundWorker.LIST11.get(1+4*BackgroundWorker.LIST11.size()/total_amount));
+        data.add(3, WeatherStationValuesGetter.TimestampList.get(1+3* WeatherStationValuesGetter.TimestampList.size()/total_amount)+" - "+ WeatherStationValuesGetter.TimestampList.get(1+4* WeatherStationValuesGetter.TimestampList.size()/total_amount));
         ind = 0;
         List<String> PART5 = new ArrayList<>();
-        while(num < (5*BackgroundWorker.LIST11.size()/total_amount))
+        while(num < (5* WeatherStationValuesGetter.TimestampList.size()/total_amount))
         {
-            PART5.add(ind,BackgroundWorker.LIST5.get(num));
+            PART5.add(ind, WeatherStationValuesGetter.WindDirectList.get(num));
             num++;
             ind++;
         }
-        data.add(4,BackgroundWorker.LIST11.get(1+4*BackgroundWorker.LIST11.size()/total_amount)+" - "+BackgroundWorker.LIST11.get(1+5*BackgroundWorker.LIST11.size()/total_amount));
+        data.add(4, WeatherStationValuesGetter.TimestampList.get(1+4* WeatherStationValuesGetter.TimestampList.size()/total_amount)+" - "+ WeatherStationValuesGetter.TimestampList.get(1+5* WeatherStationValuesGetter.TimestampList.size()/total_amount));
         ind = 0;
         List<String> PART6 = new ArrayList<>();
-        while(num < BackgroundWorker.LIST11.size())
+        while(num < WeatherStationValuesGetter.TimestampList.size())
         {
-            PART6.add(ind,BackgroundWorker.LIST5.get(num));
+            PART6.add(ind, WeatherStationValuesGetter.WindDirectList.get(num));
             num++;
             ind++;
         }
-        data.add(5,BackgroundWorker.LIST11.get(1+5*BackgroundWorker.LIST11.size()/total_amount)+" - "+BackgroundWorker.LIST11.get(BackgroundWorker.LIST11.size()-1));
+        data.add(5, WeatherStationValuesGetter.TimestampList.get(1+5* WeatherStationValuesGetter.TimestampList.size()/total_amount)+" - "+ WeatherStationValuesGetter.TimestampList.get(WeatherStationValuesGetter.TimestampList.size()-1));
         //int ROWS = 3;
         int COLS = 2;
         //for (int i = 0; i < (Firebase.LIST10.size()/4) + 1; i++)
@@ -416,9 +324,9 @@ public class CreateCharts {
     public void Fill_Wind_Speed_Chart(LineChart chart)
     {
         ArrayList<Entry> entries = new ArrayList<>();
-        for (int i = 0; i < BackgroundWorker.LIST6.size();i++)
+        for (int i = 0; i < WeatherStationValuesGetter.WindSpeedList.size(); i++)
         {
-            entries.add(new Entry(i, Float.parseFloat(BackgroundWorker.LIST6.get(i))));
+            entries.add(new Entry(i, Float.parseFloat(WeatherStationValuesGetter.WindSpeedList.get(i))));
         }
 
         // На основании массива точек создадим первую линию с названием
@@ -446,7 +354,7 @@ public class CreateCharts {
         yAxis.setTextSize(12f);
 
         XAxis xAxis = chart.getXAxis();
-        xAxis.setValueFormatter(new IndexAxisValueFormatter(BackgroundWorker.LIST11));
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(WeatherStationValuesGetter.TimestampList));
         xAxis.setGranularityEnabled(true);
         xAxis.setLabelCount(3, false);
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
@@ -455,132 +363,5 @@ public class CreateCharts {
         // Не забудем отправить команду на перерисовку кадра, иначе график не отобразится
         chart.invalidate();
     }
-    public void Fill_Home_Temp_Chart(LineChart chart)
-    {
-        ArrayList<Entry> entries = new ArrayList<>();
-        for (int i = 0; i < BackgroundWorker.LIST7.size();i++)
-        {
-            entries.add(new Entry(i, Float.parseFloat(BackgroundWorker.LIST7.get(i))));
-        }
-
-        // На основании массива точек создадим первую линию с названием
-        LineDataSet dataset = new LineDataSet(entries, "Комнатная температура, °C");
-        dataset.setDrawFilled(true);
-        dataset.setColor(Color.LTGRAY);
-        dataset.setFillColor(Color.LTGRAY);
-        dataset.setCircleColor(Color.LTGRAY);
-        // Создадим переменную данных для графика
-        LineData data = new LineData(dataset);
-        // Передадим данные для графика в сам график
-        chart.setData(data);
-        chart.animateX(500);
-        chart.setDrawBorders(true);
-        chart.setDrawMarkers(true);
-        chart.getDescription().setEnabled(false);
-
-        //chart.setVisibleXRangeMaximum(4);
-        //chart.setScaleXEnabled(false);
-
-        YAxis yAxisRight = chart.getAxisRight();
-        yAxisRight.setTextColor(Color.WHITE);
-
-        YAxis yAxis = chart.getAxisLeft();
-        yAxis.setTextSize(12f);
-
-        XAxis xAxis = chart.getXAxis();
-        xAxis.setValueFormatter(new IndexAxisValueFormatter(BackgroundWorker.LIST10));
-        xAxis.setGranularityEnabled(true);
-        xAxis.setLabelCount(3, false);
-        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        xAxis.setDrawGridLines(true);
-        xAxis.setTextSize(12f);
-        // Не забудем отправить команду на перерисовку кадра, иначе график не отобразится
-        chart.invalidate();
-    }
-    public void Fill_Home_Hum_Chart(LineChart chart)
-    {
-        ArrayList<Entry> entries = new ArrayList<>();
-        for (int i = 0; i < BackgroundWorker.LIST8.size();i++)
-        {
-            entries.add(new Entry(i, Float.parseFloat(BackgroundWorker.LIST8.get(i))));
-        }
-
-        // На основании массива точек создадим первую линию с названием
-        LineDataSet dataset = new LineDataSet(entries, "Комнатная влажность, %");
-        dataset.setDrawFilled(true);
-        dataset.setColor(Color.rgb(255, 150,0));
-        dataset.setFillColor(Color.rgb(255, 150,0));
-        dataset.setCircleColor(Color.rgb(255, 150,0));
-        // Создадим переменную данных для графика
-        LineData data = new LineData(dataset);
-        // Передадим данные для графика в сам график
-        chart.setData(data);
-        chart.animateX(500);
-        chart.setDrawBorders(true);
-        chart.setDrawMarkers(true);
-        chart.getDescription().setEnabled(false);
-
-        //chart.setVisibleXRangeMaximum(4);
-        //chart.setScaleXEnabled(false);
-
-        YAxis yAxisRight = chart.getAxisRight();
-        yAxisRight.setTextColor(Color.WHITE);
-
-        YAxis yAxis = chart.getAxisLeft();
-        yAxis.setTextSize(12f);
-
-        XAxis xAxis = chart.getXAxis();
-        xAxis.setValueFormatter(new IndexAxisValueFormatter(BackgroundWorker.LIST10));
-        xAxis.setGranularityEnabled(true);
-        xAxis.setLabelCount(3, false);
-        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        xAxis.setDrawGridLines(true);
-        xAxis.setTextSize(12f);
-        // Не забудем отправить команду на перерисовку кадра, иначе график не отобразится
-        chart.invalidate();
-    }
-    public void Fill_Pressure_Chart(LineChart chart)
-    {
-        ArrayList<Entry> entries = new ArrayList<>();
-        for (int i = 0; i < BackgroundWorker.LIST9.size();i++)
-        {
-            entries.add(new Entry(i, Float.parseFloat(BackgroundWorker.LIST9.get(i))));
-        }
-
-        // На основании массива точек создадим первую линию с названием
-        LineDataSet dataset = new LineDataSet(entries, "Атмосферное давление, мм.рт.ст");
-        dataset.setDrawFilled(true);
-        dataset.setColor(Color.DKGRAY);
-        dataset.setFillColor(Color.DKGRAY);
-        dataset.setCircleColor(Color.DKGRAY);
-        // Создадим переменную данных для графика
-        LineData data = new LineData(dataset);
-        // Передадим данные для графика в сам график
-        chart.setData(data);
-        chart.animateX(500);
-        chart.setDrawBorders(true);
-        chart.setDrawMarkers(true);
-        chart.getDescription().setEnabled(false);
-
-        //chart.setVisibleXRangeMaximum(4);
-        //chart.setScaleXEnabled(false);
-
-        YAxis yAxisRight = chart.getAxisRight();
-        yAxisRight.setTextColor(Color.WHITE);
-
-        YAxis yAxis = chart.getAxisLeft();
-        yAxis.setTextSize(12f);
-
-        XAxis xAxis = chart.getXAxis();
-        xAxis.setValueFormatter(new IndexAxisValueFormatter(BackgroundWorker.LIST10));
-        xAxis.setGranularityEnabled(true);
-        xAxis.setLabelCount(3, false);
-        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        xAxis.setDrawGridLines(true);
-        xAxis.setTextSize(12f);
-        // Не забудем отправить команду на перерисовку кадра, иначе график не отобразится
-        chart.invalidate();
-    }
-
 }
 

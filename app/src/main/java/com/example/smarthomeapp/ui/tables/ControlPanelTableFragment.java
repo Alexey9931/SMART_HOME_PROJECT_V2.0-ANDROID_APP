@@ -1,4 +1,4 @@
-package com.example.smarthomeapp;
+package com.example.smarthomeapp.ui.tables;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,18 +9,19 @@ import android.webkit.WebView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.smarthomeapp.databinding.GasboilerDbTableFragmentBinding;
+import com.example.smarthomeapp.R;
+import com.example.smarthomeapp.databinding.ControlpanelTableBinding;
 
-public class GasBoilerTableFragment extends Fragment {
-    private GasboilerDbTableFragmentBinding binding;
+public class ControlPanelTableFragment extends Fragment {
+    private ControlpanelTableBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        binding = GasboilerDbTableFragmentBinding.inflate(inflater, container, false);
+        binding = ControlpanelTableBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        WebView browser=root.findViewById(R.id.GasboilerDB_Table);
+        WebView browser=root.findViewById(R.id.ControlPanel_Table);
         browser.setInitialScale(100);
         browser.getSettings().setBuiltInZoomControls(true);
         browser.getSettings().setDisplayZoomControls(false);

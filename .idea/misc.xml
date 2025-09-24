@@ -53,6 +53,31 @@
         <entry key="..\:/SMART_HOME_PROJECT/AndroidApp/app/src/main/res/menu/activity_main_drawer.xml" value="0.27291666666666664" />
         <entry key="..\:/SMART_HOME_PROJECT/AndroidApp/app/src/main/res/menu/main.xml" value="0.27291666666666664" />
         <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/layout/activity_about.xml" value="0.25416666666666665" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/layout/activity_email_password.xml" value="0.25416666666666665" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/layout/app_bar_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/layout/content_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/layout/controlpanel_charts.xml" value="0.12" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/layout/controlpanel_charts_settings.xml" value="0.264" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/layout/controlpanel_statistics.xml" value="0.2" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/layout/controlpanel_table.xml" value="0.25416666666666665" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/layout/fragment_chart_setting.xml" value="0.25416666666666665" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/layout/fragment_charts.xml" value="0.25416666666666665" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/layout/fragment_gasboiler.xml" value="0.25416666666666665" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/layout/fragment_more_details.xml" value="0.25416666666666665" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/layout/gasboiler_charts.xml" value="0.25416666666666665" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/layout/gasboiler_charts_settings.xml" value="0.25416666666666665" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/layout/gasboiler_db_table_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/layout/gasboiler_statistics.xml" value="0.16041666666666668" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/layout/gasboiler_table.xml" value="0.16041666666666668" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/layout/nav_header_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/layout/weatherstation_charts.xml" value="0.1" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/layout/weatherstation_charts_settings.xml" value="0.25416666666666665" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/layout/weatherstation_statistics.xml" value="0.16041666666666668" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/layout/weatherstation_table.xml" value="0.16041666666666668" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/menu/activity_main_drawer.xml" value="0.25416666666666665" />
+        <entry key="..\:/SMART_HOME_PROJECT_v.2.0-AndroidApp/app/src/main/res/menu/main.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

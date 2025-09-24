@@ -12,39 +12,76 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_chart"
-        android:name="com.example.smarthomeapp.ui.charts.ChartsFragment"
+        android:id="@+id/nav_controlpanel_charts"
+        android:name="com.example.smarthomeapp.ui.charts.ControlPanelChartsFragment"
         android:label="Графики"
-        tools:layout="@layout/fragment_charts" />
+        tools:layout="@layout/controlpanel_charts" />
 
     <fragment
-        android:id="@+id/nav_chart_setting"
-        android:name="com.example.smarthomeapp.ui.chart_settings.ChartSettingFragment"
+        android:id="@+id/nav_controlpanel_chart_setting"
+        android:name="com.example.smarthomeapp.ui.chart_settings.ControlPanelChartsSettingsFragment"
         android:label="Настройки графиков"
-        tools:layout="@layout/fragment_chart_setting" />
+        tools:layout="@layout/controlpanel_charts_settings" />
 
     <fragment
-        android:id="@+id/nav_more_details"
-        android:name="com.example.smarthomeapp.MoreDetailsFragment"
+        android:id="@+id/nav_controlpanel_statistics"
+        android:name="com.example.smarthomeapp.ui.statistics.ControlPanelStatistics"
         android:label="Статистика"
-        tools:layout="@layout/fragment_more_details" />
+        tools:layout="@layout/controlpanel_statistics" />
 
     <fragment
-        android:id="@+id/nav_weathst_db_table"
-        android:name="com.example.smarthomeapp.WeathStatTableFragment"
+        android:id="@+id/nav_controlpanel_table"
+        android:name="com.example.smarthomeapp.ui.tables.ControlPanelTableFragment"
         android:label="База данных"
-        tools:layout="@layout/weathstat_db_table_fragment" />
+        tools:layout="@layout/controlpanel_table" />
 
     <fragment
-        android:id="@+id/nav_gasboiler_db_table"
-        android:name="com.example.smarthomeapp.GasBoilerTableFragment"
-        android:label="База данных"
-        tools:layout="@layout/weathstat_db_table_fragment" />
+        android:id="@+id/nav_weatherstation_charts"
+        android:name="com.example.smarthomeapp.ui.charts.WeatherStationChartsFragment"
+        android:label="Графики"
+        tools:layout="@layout/weatherstation_charts" />
 
-<!--     <fragment-->
-<!--        android:id="@+id/nav_gasboiler"-->
-<!--        android:name="com.example.smarthomeapp.GasboilerFragment"-->
-<!--        android:label="Газовый котел"-->
-<!--        tools:layout="@layout/fragment_gasboiler" />-->
+    <fragment
+        android:id="@+id/nav_weatherstation_chart_setting"
+        android:name="com.example.smarthomeapp.ui.chart_settings.WeatherStationChartsSettingsFragment"
+        android:label="Настройки графиков"
+        tools:layout="@layout/weatherstation_charts_settings" />
+
+    <fragment
+        android:id="@+id/nav_weatherstation_statistics"
+        android:name="com.example.smarthomeapp.ui.statistics.WeatherStationStatistics"
+        android:label="Статистика"
+        tools:layout="@layout/weatherstation_statistics" />
+
+    <fragment
+        android:id="@+id/nav_weatherstation_table"
+        android:name="com.example.smarthomeapp.ui.tables.WeathStatTableFragment"
+        android:label="База данных"
+        tools:layout="@layout/weatherstation_table" />
+
+    <fragment
+        android:id="@+id/nav_gasboiler_charts"
+        android:name="com.example.smarthomeapp.ui.charts.GasBoilerChartsFragment"
+        android:label="Графики"
+        tools:layout="@layout/gasboiler_charts" />
+
+    <fragment
+        android:id="@+id/nav_gasboiler_chart_setting"
+        android:name="com.example.smarthomeapp.ui.chart_settings.GasBoilerChartsSettingsFragment"
+        android:label="Настройки графиков"
+        tools:layout="@layout/gasboiler_charts_settings" />
+
+    <fragment
+        android:id="@+id/nav_gasboiler_statistics"
+        android:name="com.example.smarthomeapp.ui.statistics.GasBoilerStatistics"
+        android:label="Статистика"
+        tools:layout="@layout/gasboiler_statistics" />
+
+    <fragment
+        android:id="@+id/nav_gasboiler_table"
+        android:name="com.example.smarthomeapp.ui.tables.GasBoilerTableFragment"
+        android:label="База данных"
+        tools:layout="@layout/gasboiler_table" />
+
 
 </navigation>

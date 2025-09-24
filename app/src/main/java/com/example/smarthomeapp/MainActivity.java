@@ -35,10 +35,14 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = binding.navView;
 
         View headerView = navigationView.getHeaderView(0);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_chart, R.id.nav_chart_setting, R.id.nav_more_details,R.id.nav_weathst_db_table, R.id.nav_gasboiler_db_table, R.id.nav_gasboiler)
+                R.id.nav_home, R.id.nav_controlpanel_charts, R.id.nav_controlpanel_chart_setting,
+                R.id.nav_controlpanel_statistics,R.id.nav_controlpanel_table,
+                R.id.nav_weatherstation_charts, R.id.nav_weatherstation_chart_setting,
+                R.id.nav_weatherstation_statistics, R.id.nav_weatherstation_table,
+                R.id.nav_gasboiler_charts, R.id.nav_gasboiler_chart_setting,
+                R.id.nav_gasboiler_statistics, R.id.nav_gasboiler_table, R.id.nav_gasboiler)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
@@ -48,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
@@ -63,11 +66,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.update_home:
-                BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-                backgroundWorker.execute(   "http://alexgorlov99.ru/smarthomeproject/validateData-1day.php",
-                                            "http://alexgorlov99.ru/smarthomeproject/validateData-3days.php",
-                                            "http://alexgorlov99.ru/smarthomeproject/validateData-5days.php",
-                                            "http://alexgorlov99.ru/smarthomeproject/validateData-7days.php","login");
+                ControlPanelValuesGetter controlPanelValuesGetter = new ControlPanelValuesGetter(this);
+                controlPanelValuesGetter.execute(
+                        "http://alexgorlov99.ru/smarthomeproject2.0/get-controlpanel-1day.php",
+                        "http://alexgorlov99.ru/smarthomeproject2.0/get-controlpanel-3day.php",
+                        "http://alexgorlov99.ru/smarthomeproject2.0/get-controlpanel-5day.php",
+                        "http://alexgorlov99.ru/smarthomeproject2.0/get-controlpanel-7day.php");
                 return true;
         }
 

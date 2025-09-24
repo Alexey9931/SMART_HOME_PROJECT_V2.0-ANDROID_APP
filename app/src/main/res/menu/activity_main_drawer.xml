@@ -8,24 +8,48 @@
         android:icon="@drawable/home_icon"
         android:title="Главная" />
 
-    <item android:title="Метеостанция">
+    <item android:title="Панель управления">
         <menu>
             <item
-                android:id="@+id/nav_chart"
+                android:id="@+id/nav_controlpanel_charts"
                 android:icon="@drawable/chart_icon"
                 android:title="Графики" />
             <item
-                android:id="@+id/nav_chart_setting"
+                android:id="@+id/nav_controlpanel_chart_setting"
                 android:icon="@drawable/chart_setting_icon"
                 android:title="Настройки графиков" />
 
             <item
-                android:id="@+id/nav_more_details"
+                android:id="@+id/nav_controlpanel_statistics"
                 android:icon="@drawable/details"
                 android:title="Статистика" />
 
             <item
-                android:id="@+id/nav_weathst_db_table"
+                android:id="@+id/nav_controlpanel_table"
+                android:icon="@drawable/table"
+                android:title="База Данных" />
+
+        </menu>
+    </item>
+
+    <item android:title="Метеостанция">
+        <menu>
+            <item
+                android:id="@+id/nav_weatherstation_charts"
+                android:icon="@drawable/chart_icon"
+                android:title="Графики" />
+            <item
+                android:id="@+id/nav_weatherstation_chart_setting"
+                android:icon="@drawable/chart_setting_icon"
+                android:title="Настройки графиков" />
+
+            <item
+                android:id="@+id/nav_weatherstation_statistics"
+                android:icon="@drawable/details"
+                android:title="Статистика" />
+
+            <item
+                android:id="@+id/nav_weatherstation_table"
                 android:icon="@drawable/table"
                 android:title="База Данных" />
 
@@ -39,18 +63,17 @@
                 android:icon="@drawable/gasboiler"
                 android:title="Панель управления" />
             <item
-                android:id="@+id/nav_gasboiler_db_table"
+                android:id="@+id/nav_gasboiler_charts"
+                android:icon="@drawable/chart_icon"
+                android:title="Графики" />
+            <item
+                android:id="@+id/nav_gasboiler_chart_setting"
+                android:icon="@drawable/chart_setting_icon"
+                android:title="Настройки графиков" />
+            <item
+                android:id="@+id/nav_gasboiler_table"
                 android:icon="@drawable/table"
                 android:title="База данных" />
-        </menu>
-    </item>
-
-    <item android:title="Подсветка беседки">
-        <menu>
-            <item
-                android:id="@+id/nav_gazebo_lithning"
-                android:icon="@drawable/gazebo_lithning"
-                android:title="Панель управления" />
         </menu>
     </item>
 

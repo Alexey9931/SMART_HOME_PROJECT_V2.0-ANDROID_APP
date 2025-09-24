@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="720dp"
-    android:tag=".ui.charts.ChartsFragment">
+    android:tag=".ui.charts.WeatherStationCharts">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,60 +19,24 @@
         </TableLayout>
 
         <TextView
-            android:id="@+id/home_temp_name"
+            android:id="@+id/temp_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="45dp"
             android:layout_marginTop="0dp"
-            android:text="График изменения комнатной температуры с течением времени"
+            android:text="График изменения температуры на улице с течением времени"
             android:textAlignment="center"
             android:textColor="@color/purple_700"
             android:textSize="16dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/street_temp_name"
+            android:id="@+id/hum_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="45dp"
             android:layout_marginTop="0dp"
-            android:text="График изменения уличной температуры с течением времени"
-            android:textAlignment="center"
-            android:textColor="@color/purple_700"
-            android:textSize="16dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/street_hum_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="0dp"
-            android:text="График изменения уличной влажности с течением времени"
-            android:textAlignment="center"
-            android:textColor="@color/purple_700"
-            android:textSize="16dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/home_hum_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="0dp"
-            android:text="График изменения комнатной влажности с течением времени"
-            android:textAlignment="center"
-            android:textColor="@color/purple_700"
-            android:textSize="16dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/pressure_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="0dp"
-            android:text="График изменения атмосферного давления с течением времени"
+            android:text="График изменения влажности на улице с течением времени"
             android:textAlignment="center"
             android:textColor="@color/purple_700"
             android:textSize="16dp"
@@ -103,19 +67,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/vbat_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="0dp"
-            android:text="График изменения заряда аккумулятора с течением времени"
-            android:textAlignment="center"
-            android:textColor="@color/purple_700"
-            android:textSize="16dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/table_name"
+            android:id="@+id/winddirect_table_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="45dp"
@@ -127,7 +79,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/error_message"
+            android:id="@+id/weatherstation_chart_error_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="45dp"
@@ -139,7 +91,7 @@
 
 
         <com.github.mikephil.charting.charts.LineChart
-            android:id="@+id/street_temp_chart"
+            android:id="@+id/weathstat_temp_chart"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_marginLeft="0dp"
@@ -147,7 +99,7 @@
             tools:ignore="MissingConstraints" />
 
         <com.github.mikephil.charting.charts.LineChart
-            android:id="@+id/street_hum_chart"
+            android:id="@+id/weathstat_hum_chart"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_marginLeft="0dp"
@@ -163,48 +115,11 @@
             tools:ignore="MissingConstraints" />
 
         <com.github.mikephil.charting.charts.LineChart
-            android:id="@+id/vbat_chart"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            tools:ignore="MissingConstraints" />
-
-        <com.github.mikephil.charting.charts.LineChart
             android:id="@+id/wind_speed_chart"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="0dp"
             tools:ignore="MissingConstraints" />
-
-        <com.github.mikephil.charting.charts.LineChart
-            android:id="@+id/home_temp_chart"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            tools:ignore="MissingConstraints" />
-
-        <com.github.mikephil.charting.charts.LineChart
-            android:id="@+id/home_hum_chart"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            tools:ignore="MissingConstraints" />
-
-        <com.github.mikephil.charting.charts.LineChart
-            android:id="@+id/pressure_chart"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:foregroundTint="#763FF1"
-            tools:ignore="MissingConstraints" />
-
-
     </RelativeLayout>
-
-
 </ScrollView>
