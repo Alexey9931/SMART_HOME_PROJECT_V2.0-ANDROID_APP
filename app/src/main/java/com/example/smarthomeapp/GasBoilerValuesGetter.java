@@ -203,34 +203,34 @@ public class GasBoilerValuesGetter extends AsyncTask<String,Void,String> {
             id++;
         }
         //Форматирование строки времени для отображение на главном окне
-        String[] parts = TimestampList.get(TimestampList.size() - 1).split("/",3);
+        String[] parts = TimestampList.get(TimestampList.size() - 1).split("[-: ]",6);
         switch(parts[1])
         {
-            case "1":
+            case "01":
                 parts[1] = "Янв";
                 break;
-            case "2":
+            case "02":
                 parts[1] = "Фев";
                 break;
-            case "3":
+            case "03":
                 parts[1] = "Мар";
                 break;
-            case "4":
+            case "04":
                 parts[1] = "Апр";
                 break;
-            case "5":
+            case "05":
                 parts[1] = "Май";
                 break;
-            case "6":
+            case "06":
                 parts[1] = "Июн";
                 break;
-            case "7":
+            case "07":
                 parts[1] = "Июл";
                 break;
-            case "8":
+            case "08":
                 parts[1] = "Авг";
                 break;
-            case "9":
+            case "09":
                 parts[1] = "Сен";
                 break;
             case "10":
@@ -245,8 +245,9 @@ public class GasBoilerValuesGetter extends AsyncTask<String,Void,String> {
         }
         if (i != 0)
         {
-            SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss dd/MM/yy");
-            HomeFragment.time_for_display = (parts[0]+"/"+parts[1]+"/"+"20"+parts[2]).replace(',', '\n');
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            HomeFragment.time_for_display =
+                    parts[2]+"/"+parts[1]+"/"+parts[0]+"\n"+parts[3]+":"+parts[4]+":"+parts[5];
             Date current_time = new Date();
             Date display_time = null;
             try {
@@ -255,11 +256,13 @@ public class GasBoilerValuesGetter extends AsyncTask<String,Void,String> {
                 System.out.println("time"+delta);
                 if (delta > 600)
                 {
-                    time_error.setVisibility(View.VISIBLE);
+                    // TODO
+//                    time_error.setVisibility(View.VISIBLE);
                 }
                 else
                 {
-                    time_error.setVisibility(View.INVISIBLE);
+                    // TODO
+//                    time_error.setVisibility(View.VISIBLE);
                 }
             } catch (ParseException e) {
                 e.printStackTrace();
@@ -268,53 +271,47 @@ public class GasBoilerValuesGetter extends AsyncTask<String,Void,String> {
         //Форматирование времени для отображения на графиках
         for(int n = 0; n < TimestampList.size(); n++)
         {
-            String[] all_part = TimestampList.get(n).replace(',', ' ').split(" ",2);
-            String time = all_part[0];
-            String date = all_part[1];
-            String[] date_part = date.split("/", 3);
-            switch(date_part[1])
+            String[] part = TimestampList.get(n).split("[-: ]",6);
+            switch(part[1])
             {
-                case "1":
-                    date_part[1] = "Янв";
+                case "01":
+                    part[1] = "Янв";
                     break;
-                case "2":
-                    date_part[1] = "Фев";
+                case "02":
+                    part[1] = "Фев";
                     break;
-                case "3":
-                    date_part[1] = "Мар";
+                case "03":
+                    part[1] = "Мар";
                     break;
-                case "4":
-                    date_part[1] = "Апр";
+                case "04":
+                    part[1] = "Апр";
                     break;
-                case "5":
-                    date_part[1] = "Май";
+                case "05":
+                    part[1] = "Май";
                     break;
-                case "6":
-                    date_part[1] = "Июн";
+                case "06":
+                    part[1] = "Июн";
                     break;
-                case "7":
-                    date_part[1] = "Июл";
+                case "07":
+                    part[1] = "Июл";
                     break;
-                case "8":
-                    date_part[1] = "Авг";
+                case "08":
+                    part[1] = "Авг";
                     break;
-                case "9":
-                    date_part[1] = "Сен";
+                case "09":
+                    part[1] = "Сен";
                     break;
                 case "10":
-                    date_part[1] = "Окт";
+                    part[1] = "Окт";
                     break;
                 case "11":
-                    date_part[1] = "Ноя";
+                    part[1] = "Ноя";
                     break;
                 case "12":
-                    date_part[1] = "Дек";
+                    part[1] = "Дек";
                     break;
             }
-            String[] time_part = time.split(":", 3);
-            String hours = time_part[0];
-            String minutes = time_part[1];
-            TimestampList.set(n,hours+":"+minutes+" ("+date_part[0]+" "+date_part[1]+")");
+            TimestampList.set(n,part[3]+":"+part[4]+" ("+part[2]+" "+part[1]+")");
         }
     }
 

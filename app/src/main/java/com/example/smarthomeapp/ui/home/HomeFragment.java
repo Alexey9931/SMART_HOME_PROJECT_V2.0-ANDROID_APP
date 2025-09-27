@@ -12,7 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.smarthomeapp.ControlPanelValuesGetter;
+import com.example.smarthomeapp.GasBoilerValuesGetter;
 import com.example.smarthomeapp.R;
+import com.example.smarthomeapp.WeatherStationValuesGetter;
 import com.example.smarthomeapp.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
@@ -65,9 +67,19 @@ public class HomeFragment extends Fragment {
                 "http://alexgorlov99.ru/smarthomeproject2.0/get-controlpanel-5day.php",
                 "http://alexgorlov99.ru/smarthomeproject2.0/get-controlpanel-7day.php");
 
+        GasBoilerValuesGetter gasBoilerValuesGetter = new GasBoilerValuesGetter(getContext());
+        gasBoilerValuesGetter.execute(
+                "http://alexgorlov99.ru/smarthomeproject2.0/get-gasboilercontroller-1day.php",
+                "http://alexgorlov99.ru/smarthomeproject2.0/get-gasboilercontroller-3day.php",
+                "http://alexgorlov99.ru/smarthomeproject2.0/get-gasboilercontroller-5day.php",
+                "http://alexgorlov99.ru/smarthomeproject2.0/get-gasboilercontroller-7day.php");
 
-        //firebase.get_firebase(getContext(), STREET_TEMP, STREET_HUM, RAIN, VBat, WIND_SPEED, WIND_DIRECTION, HOME_TEMP, HOME_HUM, PRESSURE, TIME, imagewind, weath_forecast);
-
+        WeatherStationValuesGetter weatherStationValuesGetter = new WeatherStationValuesGetter(getContext());
+        weatherStationValuesGetter.execute(
+                "http://alexgorlov99.ru/smarthomeproject2.0/get-weatherstation-1day.php",
+                "http://alexgorlov99.ru/smarthomeproject2.0/get-weatherstation-3day.php",
+                "http://alexgorlov99.ru/smarthomeproject2.0/get-weatherstation-5day.php",
+                "http://alexgorlov99.ru/smarthomeproject2.0/get-weatherstation-7day.php");
         return root;
     }
 

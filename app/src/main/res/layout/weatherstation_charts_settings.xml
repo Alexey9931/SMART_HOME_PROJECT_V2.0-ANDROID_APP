@@ -118,7 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="430dp"
-            android:text="Атм.давление[мм.рт.ст.]"
+            android:text="Скорость ветра [м/с]"
             android:textColor="@color/purple_700"
             android:textSize="20dp" />
 
@@ -128,7 +128,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="490dp"
-            android:text="Скорость ветра [м/с]"
+            android:text="Направление ветра"
             android:textColor="@color/purple_700"
             android:textSize="20dp" />
 
@@ -138,12 +138,12 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="550dp"
-            android:text="Направление ветра"
+            android:text="Кол-во осадков [%]"
             android:textColor="@color/purple_700"
             android:textSize="20dp" />
 
         <CheckBox
-            android:id="@+id/WeatherStationChartsSettings_checkBox_PRESSURE"
+            android:id="@+id/WeatherStationChartsSettings_checkBox_WINDSPEED"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="300dp"
@@ -153,7 +153,7 @@
             android:textSize="16dp" />
 
         <CheckBox
-            android:id="@+id/WeatherStationChartsSettings_checkBox_WINDSPEED"
+            android:id="@+id/WeatherStationChartsSettings_checkBox_WINDDIRECT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="300dp"
@@ -163,31 +163,11 @@
             android:textSize="16dp" />
 
         <CheckBox
-            android:id="@+id/WeatherStationChartsSettings_checkBox_WINDDIRECT"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="300dp"
-            android:layout_marginTop="540dp"
-            android:buttonTint="@color/purple_700"
-            android:textColor="@color/purple_700"
-            android:textSize="16dp" />
-
-        <TextView
-            android:id="@+id/WeatherStationChartsSettings_textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="610dp"
-            android:text="Кол-во осадков [%]"
-            android:textColor="@color/purple_700"
-            android:textSize="20dp" />
-
-        <CheckBox
             android:id="@+id/WeatherStationChartsSettings_checkBox_RAINFALL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="300dp"
-            android:layout_marginTop="600dp"
+            android:layout_marginTop="540dp"
             android:buttonTint="@color/purple_700"
             android:textColor="@color/purple_700"
             android:textSize="16dp" />

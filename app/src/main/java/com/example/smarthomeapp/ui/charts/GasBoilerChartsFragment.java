@@ -37,10 +37,10 @@ public class GasBoilerChartsFragment extends Fragment {
 
         GasBoilerValuesGetter gasBoilerValuesGetter = new GasBoilerValuesGetter(getContext());
         gasBoilerValuesGetter.execute(
-                "http://alexgorlov99.ru/smarthomeproject2.0/get-gasbolier-1day.php",
-                "http://alexgorlov99.ru/smarthomeproject2.0/get-gasboiler-3day.php",
-                "http://alexgorlov99.ru/smarthomeproject2.0/get-gasboiler-5day.php",
-                "http://alexgorlov99.ru/smarthomeproject2.0/get-gasboiler-7day.php");
+                "http://alexgorlov99.ru/smarthomeproject2.0/get-gasboilercontroller-1day.php",
+                "http://alexgorlov99.ru/smarthomeproject2.0/get-gasboilercontroller-3day.php",
+                "http://alexgorlov99.ru/smarthomeproject2.0/get-gasboilercontroller-5day.php",
+                "http://alexgorlov99.ru/smarthomeproject2.0/get-gasboilercontroller-7day.php");
 
         setpoint_temp_chart.setVisibility(View.GONE);
         current_temp_chart.setVisibility(View.GONE);
