@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/abril_fatface</item>
+        <item>@font/aclonica</item>
+        <item>@font/acme</item>
+        <item>@font/akronim</item>
+        <item>@font/alegreya_extrabold</item>
+        <item>@font/alegreya_semibold</item>
+        <item>@font/almendra_bold</item>
+        <item>@font/amaranth</item>
+        <item>@font/anton</item>
+        <item>@font/arbutus</item>
+        <item>@font/bangers</item>
+        <item>@font/berkshire_swash</item>
+        <item>@font/black_and_white_picture</item>
+        <item>@font/kadwa</item>
         <item>@font/libre_baskerville</item>
+        <item>@font/maiden_orange</item>
+        <item>@font/ribeye_marrow</item>
+        <item>@font/saira_stencil_one</item>
+        <item>@font/train_one</item>
+        <item>@font/wellfleet</item>
     </array>
 </resources>

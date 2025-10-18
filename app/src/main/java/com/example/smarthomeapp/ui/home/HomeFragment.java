@@ -20,22 +20,28 @@ import com.example.smarthomeapp.databinding.FragmentHomeBinding;
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
-    public static ImageView imagewind;
     public static TextView STREET_TEMP;
     public static TextView STREET_HUM;
     public static TextView HOME_TEMP;
     public static TextView HOME_HUM;
     public static TextView RAIN;
-    public static TextView VBat;
     public static TextView WIND_SPEED;
     public static TextView WIND_DIRECTION;
     public static TextView PRESSURE;
-    public static TextView TIME;
+    public static TextView GASBOILER_TEMP;
+    public static TextView GASBOILER_SETPOINT;
+    public static TextView GASBOILER_STATUS;
+    public static TextView GASBOILER_SOURCE;
+    public static TextView CONTROL_PANEL_TIME;
+    public static TextView WEATHER_ST_TIME;
+    public static TextView GASBOILER_TIME;
     public static ImageView weath_forecast;
     public static TableLayout Table;
     public static ImageView time_error;
 
-    public static String time_for_display = "";
+    public static String controlpanel_display_time = "";
+    public static String weatherstation_display_time = "";
+    public static String gasboiler_display_time = "";
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -44,21 +50,25 @@ public class HomeFragment extends Fragment {
         //Firebase firebase = new Firebase();
 
 
-        imagewind = root.findViewById(R.id.imagewind);
         STREET_TEMP = root.findViewById(R.id.STREET_TEMP);
         STREET_HUM = root.findViewById(R.id.STREET_HUM);
         HOME_TEMP = root.findViewById(R.id.HOME_TEMP);
         HOME_HUM = root.findViewById(R.id.HOME_HUM);
         RAIN = root.findViewById(R.id.RAIN);
-        VBat = root.findViewById(R.id.VBat);
         WIND_SPEED = root.findViewById(R.id.WIND_SPEED);
         WIND_DIRECTION = root.findViewById(R.id.WIND_DIRECTION);
         PRESSURE = root.findViewById(R.id.PRESSURE);
-        TIME = root.findViewById(R.id.TIME);
+        GASBOILER_TEMP = root.findViewById(R.id.GASBOILER_TEMP);
+        GASBOILER_SETPOINT = root.findViewById(R.id.GASBOILER_SETPOINT);
+        GASBOILER_STATUS = root.findViewById(R.id.GASBOILER_STATUS);
+        GASBOILER_SOURCE = root.findViewById(R.id.GASBOILER_SOURCE);
+        CONTROL_PANEL_TIME = root.findViewById(R.id.CONTROL_PANEL_TIME);
+        WEATHER_ST_TIME = root.findViewById(R.id.WEATHER_ST_TIME);
+        GASBOILER_TIME = root.findViewById(R.id.GASBOILER_TIME);
         weath_forecast = root.findViewById(R.id.imageView_weath_forecast);
         Table = root.findViewById(R.id.table);
         time_error = root.findViewById(R.id.time_error);
-        time_error.setVisibility(View.INVISIBLE);
+//        time_error.setVisibility(View.INVISIBLE);
 
         ControlPanelValuesGetter controlPanelValuesGetter = new ControlPanelValuesGetter(getContext());
         controlPanelValuesGetter.execute(

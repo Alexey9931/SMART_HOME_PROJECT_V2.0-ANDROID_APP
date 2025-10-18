@@ -26,6 +26,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class WeatherStationValuesGetter extends AsyncTask<String,Void,String> {
     public static List<String> TemperatureList = new ArrayList<>();
@@ -202,50 +203,11 @@ public class WeatherStationValuesGetter extends AsyncTask<String,Void,String> {
         }
         //Форматирование строки времени для отображение на главном окне
         String[] parts = TimestampList.get(TimestampList.size() - 1).split("[-: ]",6);
-        switch(parts[1])
-        {
-            case "01":
-                parts[1] = "Янв";
-                break;
-            case "02":
-                parts[1] = "Фев";
-                break;
-            case "03":
-                parts[1] = "Мар";
-                break;
-            case "04":
-                parts[1] = "Апр";
-                break;
-            case "05":
-                parts[1] = "Май";
-                break;
-            case "06":
-                parts[1] = "Июн";
-                break;
-            case "07":
-                parts[1] = "Июл";
-                break;
-            case "08":
-                parts[1] = "Авг";
-                break;
-            case "09":
-                parts[1] = "Сен";
-                break;
-            case "10":
-                parts[1] = "Окт";
-                break;
-            case "11":
-                parts[1] = "Ноя";
-                break;
-            case "12":
-                parts[1] = "Дек";
-                break;
-        }
         if (i != 0)
         {
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//            HomeFragment.time_for_display =
-//                    parts[2]+"/"+parts[1]+"/"+parts[0]+"\n"+parts[3]+":"+parts[4]+":"+parts[5];
+            HomeFragment.weatherstation_display_time =
+                    parts[3]+":"+parts[4] + " " + parts[2]+"/"+parts[1]+"/"+parts[0];
             Date current_time = new Date();
             Date display_time = null;
             try {
@@ -316,42 +278,19 @@ public class WeatherStationValuesGetter extends AsyncTask<String,Void,String> {
     public void FillDisplayParam()
     {
         try {
-            HomeFragment.STREET_TEMP.setText(TemperatureList.get(TemperatureList.size() - 1));
-            HomeFragment.STREET_HUM.setText(HumidityList.get(HumidityList.size() - 1));
-            HomeFragment.RAIN.setText(RainFallList.get(RainFallList.size() - 1));
-            HomeFragment.WIND_SPEED.setText(WindSpeedList.get(WindSpeedList.size() - 1));
-            HomeFragment.WIND_DIRECTION.setText(WindDirectList.get(WindDirectList.size() - 1));
-//            HomeFragment.TIME.setText(HomeFragment.time_for_display);
-            //вывод индикатора направления ветра
-            switch (WindDirectList.get(WindDirectList.size() - 1)) {
-                case "N-W":
-                    HomeFragment.imagewind.setImageResource(R.drawable.nw);
-                    break;
-                case "N":
-                    HomeFragment.imagewind.setImageResource(R.drawable.n);
-                    break;
-                case "S":
-                    HomeFragment.imagewind.setImageResource(R.drawable.s);
-                    break;
-                case "E":
-                    HomeFragment.imagewind.setImageResource(R.drawable.e);
-                    break;
-                case "W":
-                    HomeFragment.imagewind.setImageResource(R.drawable.w);
-                    break;
-                case "N-E":
-                    HomeFragment.imagewind.setImageResource(R.drawable.ne);
-                    break;
-                case "S-W":
-                    HomeFragment.imagewind.setImageResource(R.drawable.sw);
-                    break;
-                case "S-E":
-                    HomeFragment.imagewind.setImageResource(R.drawable.se);
-                    break;
-                default:
-                    HomeFragment.imagewind.setImageResource(R.drawable.def);
-                    break;
-            }
+            HomeFragment.STREET_TEMP.setText(String.format(Locale.US,"%1$+05.1f",
+                    Float.valueOf(TemperatureList.get(TemperatureList.size() - 1))));
+            HomeFragment.STREET_HUM.setText(String.format(Locale.US,"%1$04.1f",
+                    Float.valueOf(HumidityList.get(HumidityList.size() - 1))));
+            HomeFragment.RAIN.setText(String.format(Locale.US,"%1$02.0f",
+                    Float.valueOf(RainFallList.get(RainFallList.size() - 1))));
+            HomeFragment.WIND_SPEED.setText(String.format(Locale.US,"%1$04.1f",
+                    Float.valueOf(WindSpeedList.get(WindSpeedList.size() - 1))));
+            if (WindDirectList.get(WindDirectList.size() - 1).equals("0"))
+                HomeFragment.WIND_DIRECTION.setText("?");
+            else
+                HomeFragment.WIND_DIRECTION.setText(WindDirectList.get(WindDirectList.size() - 1));
+            HomeFragment.WEATHER_ST_TIME.setText(HomeFragment.weatherstation_display_time);
         }
         catch (Exception e)
         {

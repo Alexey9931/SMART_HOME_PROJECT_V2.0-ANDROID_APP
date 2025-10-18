@@ -25,7 +25,7 @@ public class WeatherStationChartsSettingsFragment extends Fragment {
 
     private WeatherstationChartsSettingsBinding binding;
 
-    public static String choose_chart_mode = "nothing";
+    public static String choose_chart_mode = "all_other";
     public static Boolean TEMP_MODE = false;
     public static Boolean HUM_MODE = false;
     public static Boolean WIND_SPEED_MODE = false;

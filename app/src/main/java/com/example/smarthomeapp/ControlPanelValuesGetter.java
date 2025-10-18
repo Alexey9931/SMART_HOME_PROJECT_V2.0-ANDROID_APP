@@ -27,6 +27,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class ControlPanelValuesGetter extends AsyncTask<String,Void,String> {
     public static List<String> TemperatureList = new ArrayList<>();
@@ -183,50 +184,11 @@ public class ControlPanelValuesGetter extends AsyncTask<String,Void,String> {
         }
         //Форматирование строки времени для отображение на главном окне
         String[] parts = TimestampList.get(TimestampList.size() - 1).split("[-: ]",6);
-        switch(parts[1])
-        {
-            case "01":
-                parts[1] = "Янв";
-                break;
-            case "02":
-                parts[1] = "Фев";
-                break;
-            case "03":
-                parts[1] = "Мар";
-                break;
-            case "04":
-                parts[1] = "Апр";
-                break;
-            case "05":
-                parts[1] = "Май";
-                break;
-            case "06":
-                parts[1] = "Июн";
-                break;
-            case "07":
-                parts[1] = "Июл";
-                break;
-            case "08":
-                parts[1] = "Авг";
-                break;
-            case "09":
-                parts[1] = "Сен";
-                break;
-            case "10":
-                parts[1] = "Окт";
-                break;
-            case "11":
-                parts[1] = "Ноя";
-                break;
-            case "12":
-                parts[1] = "Дек";
-                break;
-        }
         if (i != 0)
         {
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            HomeFragment.time_for_display =
-                    parts[2]+"/"+parts[1]+"/"+parts[0]+"\n"+parts[3]+":"+parts[4]+":"+parts[5];
+            HomeFragment.controlpanel_display_time =
+                    parts[3]+":"+parts[4] + " " + parts[2]+"/"+parts[1]+"/"+parts[0];
             Date current_time = new Date();
             Date display_time = null;
             try {
@@ -297,13 +259,13 @@ public class ControlPanelValuesGetter extends AsyncTask<String,Void,String> {
     public void FillDisplayParam()
     {
         try {
-            HomeFragment.HOME_TEMP.setText(String.format("%.1f",
+            HomeFragment.HOME_TEMP.setText(String.format(Locale.US, "%1$+05.1f",
                     Float.valueOf(TemperatureList.get(TemperatureList.size() - 1))));
-            HomeFragment.HOME_HUM.setText(String.format("%.1f",
+            HomeFragment.HOME_HUM.setText(String.format(Locale.US,"%1$04.1f",
                     Float.valueOf(HumidityList.get(HumidityList.size() - 1))));
-            HomeFragment.PRESSURE.setText(String.format("%.0f",
+            HomeFragment.PRESSURE.setText(String.format(Locale.US,"%1$03.0f",
                     Float.valueOf(PressureList.get(PressureList.size() - 1))));
-            HomeFragment.TIME.setText(HomeFragment.time_for_display);
+            HomeFragment.CONTROL_PANEL_TIME.setText(HomeFragment.controlpanel_display_time);
         }
         catch (Exception e)
         {

@@ -136,7 +136,8 @@ public class WeatherStationChartsViewer extends AsyncTask<View,Void,String> {
             layoutParams9.leftMargin = 100;
             layoutParams9.topMargin = 3985;
             wind_direct_table.setLayoutParams(layoutParams8);
-            create_chart.Fill_Wind_Direct_Table(wind_direct_table,context);
+            TODO:
+//            create_chart.Fill_Wind_Direct_Table(wind_direct_table,context);
             table_name.setLayoutParams(layoutParams9);
         }
         else
@@ -224,7 +225,8 @@ public class WeatherStationChartsViewer extends AsyncTask<View,Void,String> {
                 WeatherStationChartsCreator create_chart = new WeatherStationChartsCreator();
                 wind_direct_table.setVisibility(View.VISIBLE);
                 table_name.setVisibility(View.VISIBLE);
-                create_chart.Fill_Wind_Direct_Table(wind_direct_table, context);
+                TODO:
+//                create_chart.Fill_Wind_Direct_Table(wind_direct_table, context);
                 count++;
             }
         }

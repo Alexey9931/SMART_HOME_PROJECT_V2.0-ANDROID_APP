@@ -23,7 +23,7 @@ public class GasBoilerChartsSettingsFragment extends Fragment {
 
     private GasboilerChartsSettingsBinding binding;
 
-    public static String choose_chart_mode = "nothing";
+    public static String choose_chart_mode = "all_other";
     public static Boolean SETPOINT_TEMP_MODE = false;
     public static Boolean CURRENT_TEMP_MODE = false;
     public static Boolean STATUS_MODE = false;
