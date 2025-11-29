@@ -47,8 +47,6 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        //Firebase firebase = new Firebase();
-
 
         STREET_TEMP = root.findViewById(R.id.STREET_TEMP);
         STREET_HUM = root.findViewById(R.id.STREET_HUM);

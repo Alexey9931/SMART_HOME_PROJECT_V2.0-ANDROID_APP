@@ -20,7 +20,7 @@
     <fragment
         android:id="@+id/nav_controlpanel_chart_setting"
         android:name="com.example.smarthomeapp.ui.chart_settings.ControlPanelChartsSettingsFragment"
-        android:label="Настройки графиков"
+        android:label="Панель управления/Настройки графиков"
         tools:layout="@layout/controlpanel_charts_settings" />
 
     <fragment

@@ -73,7 +73,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginTop="740dp"
         android:fontFamily="serif-monospace"
-        android:text="Copyright © 2023 Alexey Gorlov"
+        android:text="Copyright © 2025 Alexey Gorlov"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="16dp"
@@ -86,7 +86,7 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="60dp"
         android:fontFamily="serif"
-        android:text="Smart Home Ivnya v.1.0 2023"
+        android:text="Smart Home Project v.2.0 2025"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20dp"
@@ -113,9 +113,9 @@
         android:layout_marginTop="150dp"
         android:fontFamily="serif"
         android:text=" Приложение предназначено для монито-\nринга и управлением в режиме реального времени системой Умный дом, включающей в себя:\n
-       -Метеостанция (уличная и домашняя)\n
-       -Контроллер газового котла\n
-       -Уличное освещение"
+       -Панель управления\n
+       -Уличная метеостанция\n
+       -Контроллер газового котла"
         android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="16dp"

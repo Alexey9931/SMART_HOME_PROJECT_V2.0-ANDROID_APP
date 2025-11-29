@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
                 R.id.nav_controlpanel_statistics,R.id.nav_controlpanel_table,
                 R.id.nav_weatherstation_charts, R.id.nav_weatherstation_chart_setting,
                 R.id.nav_weatherstation_statistics, R.id.nav_weatherstation_table,
-                R.id.nav_gasboiler_charts, R.id.nav_gasboiler_chart_setting,
-                R.id.nav_gasboiler_statistics, R.id.nav_gasboiler_table, R.id.nav_gasboiler)
+                R.id.nav_gasboiler, R.id.nav_gasboiler_charts, R.id.nav_gasboiler_chart_setting,
+                R.id.nav_gasboiler_table)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);

@@ -25,7 +25,7 @@ public class GasBoilerTableFragment extends Fragment {
         browser.setInitialScale(100);
         browser.getSettings().setBuiltInZoomControls(true);
         browser.getSettings().setDisplayZoomControls(false);
-        browser.loadUrl("http://alexgorlov99.ru/smarthomeproject/gasboiler-data.php");
+        browser.loadUrl("http://alexgorlov99.ru/smarthomeproject2.0/gasboilercontroller-data.php");
 
         return root;
     }

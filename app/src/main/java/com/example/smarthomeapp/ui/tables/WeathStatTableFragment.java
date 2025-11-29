@@ -25,7 +25,7 @@ public class WeathStatTableFragment extends Fragment {
         browser.setInitialScale(100);
         browser.getSettings().setBuiltInZoomControls(true);
         browser.getSettings().setDisplayZoomControls(false);
-        browser.loadUrl("http://alexgorlov99.ru/smarthomeproject/weatherstation-data.php");
+        browser.loadUrl("http://alexgorlov99.ru/smarthomeproject2.0/weatherstation-data.php");
 
         return root;
     }
