@@ -32,7 +32,7 @@
         </menu>
     </item>
 
-    <item android:title="Метеостанция">
+    <item android:title="Уличная метеостанция">
         <menu>
             <item
                 android:id="@+id/nav_weatherstation_charts"
@@ -56,7 +56,7 @@
         </menu>
     </item>
 
-    <item android:title="Газовый котел">
+    <item android:title="Контроллер газового котла">
         <menu>
             <item
                 android:id="@+id/nav_gasboiler"

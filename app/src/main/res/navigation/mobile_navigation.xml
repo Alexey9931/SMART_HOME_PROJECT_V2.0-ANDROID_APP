@@ -14,73 +14,73 @@
     <fragment
         android:id="@+id/nav_controlpanel_charts"
         android:name="com.example.smarthomeapp.ui.charts.ControlPanelChartsFragment"
-        android:label="Графики"
+        android:label="Панель управления"
         tools:layout="@layout/controlpanel_charts" />
 
     <fragment
         android:id="@+id/nav_controlpanel_chart_setting"
         android:name="com.example.smarthomeapp.ui.chart_settings.ControlPanelChartsSettingsFragment"
-        android:label="Панель управления/Настройки графиков"
+        android:label="Панель управления"
         tools:layout="@layout/controlpanel_charts_settings" />
 
     <fragment
         android:id="@+id/nav_controlpanel_statistics"
         android:name="com.example.smarthomeapp.ui.statistics.ControlPanelStatistics"
-        android:label="Статистика"
+        android:label="Панель управления"
         tools:layout="@layout/controlpanel_statistics" />
 
     <fragment
         android:id="@+id/nav_controlpanel_table"
         android:name="com.example.smarthomeapp.ui.tables.ControlPanelTableFragment"
-        android:label="База данных"
+        android:label="Панель управления"
         tools:layout="@layout/controlpanel_table" />
 
     <fragment
         android:id="@+id/nav_weatherstation_charts"
         android:name="com.example.smarthomeapp.ui.charts.WeatherStationChartsFragment"
-        android:label="Графики"
+        android:label="Уличная метеостанция"
         tools:layout="@layout/weatherstation_charts" />
 
     <fragment
         android:id="@+id/nav_weatherstation_chart_setting"
         android:name="com.example.smarthomeapp.ui.chart_settings.WeatherStationChartsSettingsFragment"
-        android:label="Настройки графиков"
+        android:label="Уличная метеостанция"
         tools:layout="@layout/weatherstation_charts_settings" />
 
     <fragment
         android:id="@+id/nav_weatherstation_statistics"
         android:name="com.example.smarthomeapp.ui.statistics.WeatherStationStatistics"
-        android:label="Статистика"
+        android:label="Уличная метеостанция"
         tools:layout="@layout/weatherstation_statistics" />
 
     <fragment
         android:id="@+id/nav_weatherstation_table"
         android:name="com.example.smarthomeapp.ui.tables.WeathStatTableFragment"
-        android:label="База данных"
+        android:label="Уличная метеостанция"
         tools:layout="@layout/weatherstation_table" />
 
     <fragment
         android:id="@+id/nav_gasboiler_charts"
         android:name="com.example.smarthomeapp.ui.charts.GasBoilerChartsFragment"
-        android:label="Графики"
+        android:label="Контроллер газового котла"
         tools:layout="@layout/gasboiler_charts" />
 
     <fragment
         android:id="@+id/nav_gasboiler_chart_setting"
         android:name="com.example.smarthomeapp.ui.chart_settings.GasBoilerChartsSettingsFragment"
-        android:label="Настройки графиков"
+        android:label="Контроллер газового котла"
         tools:layout="@layout/gasboiler_charts_settings" />
 
     <fragment
         android:id="@+id/nav_gasboiler_statistics"
         android:name="com.example.smarthomeapp.ui.statistics.GasBoilerStatistics"
-        android:label="Статистика"
+        android:label="Контроллер газового котла"
         tools:layout="@layout/gasboiler_statistics" />
 
     <fragment
         android:id="@+id/nav_gasboiler_table"
         android:name="com.example.smarthomeapp.ui.tables.GasBoilerTableFragment"
-        android:label="База данных"
+        android:label="Контроллер газового котла"
         tools:layout="@layout/gasboiler_table" />
 
 
